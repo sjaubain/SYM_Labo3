@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/nfcButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="nfcActivity"
+        android:text="NFC" />
+
+    <Button
+        android:id="@+id/barcodeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="barcodeActivity"
+        android:text="BARCODE" />
+
+    <Button
+        android:id="@+id/beaconButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="beaconActivity"
+        android:text="BEACON" />
+
+    <Button
+        android:id="@+id/captorButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="captorActivity"
+        android:text="CAPTOR" />
+
+</LinearLayout>

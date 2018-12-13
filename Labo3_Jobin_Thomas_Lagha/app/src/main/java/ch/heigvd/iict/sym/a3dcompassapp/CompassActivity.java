@@ -1,12 +1,13 @@
 package ch.heigvd.iict.sym.a3dcompassapp;
 
+import android.app.Activity;
 import android.opengl.GLSurfaceView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class CompassActivity extends AppCompatActivity {
+public class CompassActivity extends Activity {
 
     //opengl
     private OpenGLRenderer  opglr           = null;
