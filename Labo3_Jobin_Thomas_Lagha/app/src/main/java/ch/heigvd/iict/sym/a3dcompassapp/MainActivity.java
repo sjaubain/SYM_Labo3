@@ -42,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        CaptorActivityButton = findViewById(R.id.captorButton);
+        CaptorActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                captorActivity(v);
+            }
+        });
+
         /* TODO */
         /* All other buttons */
     }
@@ -49,5 +57,10 @@ public class MainActivity extends AppCompatActivity {
     public void barcodeActivity(View v) {
         Intent intentBarcode = new Intent(this, BarcodeActivity.class);
         startActivity(intentBarcode);
+    }
+    public void captorActivity(View v){
+
+        Intent intentCompass = new Intent(this, CompassActivity.class);
+        startActivity(intentCompass);
     }
 }
