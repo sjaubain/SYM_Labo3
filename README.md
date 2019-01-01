@@ -1,5 +1,3 @@
-Jobin, Lagha, Thomas
-
 # <center> Systèmes moblies
 # <center> Laboratoire n°3 : Utilisation de données environnementales
 
@@ -9,6 +7,10 @@ Jobin, Lagha, Thomas
 **Dans la manipulation ci-dessus, les tags NFC utilisés contiennent 4 valeurs textuelles codées en UTF-8 dans un format de message NDEF. Une personne malveillante ayant accès au porte-clés peut aisément copier les valeurs stockées dans celui-ci et les répliquer sur une autre puce NFC.**
 
 **A partir de l’API Android concernant les tags NFC4, pouvez-vous imaginer une autre approche pour rendre plus compliqué le clonage des tags NFC ? Est-ce possible sur toutes les plateformes (Android et iOS), existe-il des limitations ? Voyez-vous d’autres possibilités ?**
+
+Utiliser un id pour assurer l'authentification de la bonne personne avant le clonage des données pourrait constituer une solution. Certains tags NFC permettent une identification plus sûr via un ID, nous permettant d'avoir une meilleure sécurisation des données. Il faut cependant retenir que l'ID est une variable modifiable. Il serait donc possible de chercher à recupérer dans un premier temps l'ID du smartphone authorisé avant de répliquer son ID pour obtenir un accès aux données. Cette solution n'est donc que partielle.
+
+Nous pourrions imaginer également une copie des données temporaire en lecture. En fonction de la priorité des données, nous authorieserons la lecture de celles-ci plus ou moins longtemps.
 
 ## Codes-bars
 
