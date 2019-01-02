@@ -2,6 +2,7 @@
 # <center> Laboratoire n°3 : Utilisation de données environnementales
 
 ## Balises NFC
+https://www.thepolyglotdeveloper.com/2016/07/support-ibeacons-in-your-native-android-mobile-app/
 
 ### 2.4 Question
 **Dans la manipulation ci-dessus, les tags NFC utilisés contiennent 4 valeurs textuelles codées en UTF-8 dans un format de message NDEF. Une personne malveillante ayant accès au porte-clés peut aisément copier les valeurs stockées dans celui-ci et les répliquer sur une autre puce NFC.**
