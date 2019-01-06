@@ -9,10 +9,7 @@
 
 **A partir de l’API Android concernant les tags NFC4, pouvez-vous imaginer une autre approche pour rendre plus compliqué le clonage des tags NFC ? Est-ce possible sur toutes les plateformes (Android et iOS), existe-il des limitations ? Voyez-vous d’autres possibilités ?**
 
-Utiliser un id pour assurer l'authentification de la bonne personne avant le clonage des données pourrait constituer une solution. Certains tags NFC permettent une identification plus sûr via un ID, nous permettant d'avoir une meilleure sécurisation des données. Il faut cependant retenir que l'ID est une variable modifiable. Il serait donc possible de chercher à recupérer dans un premier temps l'ID du smartphone authorisé avant de répliquer son ID pour obtenir un accès aux données. Cette solution n'est donc que partielle.
-
-
-Nous pourrions imaginer également une copie des données temporaire en lecture. En fonction de la priorité des données, nous authorieserons la lecture de celles-ci plus ou moins longtemps.
+Utiliser un ID pour assurer l'authentification de la bonne personne avant l'accès aux données pourrait constituer une solution. Certains tags NFC permettent une identification plus sûr via un ID, nous permettant d'avoir une meilleure sécurisation des données. Il faut cependant retenir que l'ID est une variable modifiable. Il serait donc possible de chercher à récupérer dans un premier temps l'ID de la puce authorisé avant de répliquer son ID pour obtenir un accès aux données. Cette solution n'est donc que partielle et n'est pas applicable à iOS. En effet, iOS est capable de lire des tag NFC depuis iOS 11 mais n'est pas capable de lire les ID ni d'encoder des données. Android peut lire les tag NFC et leur ID depuis Android 10. Nous pourrions donc imaginer encoder sur Android les données via un procédé cryptographique afin d'améliorer la sécurisation des données.
 
 ## Codes-bars
 
@@ -28,6 +25,7 @@ Le code barre convient bien à une billetterie. On pourra le rendre invalide une
 
 -  Ludique (Preuves d'achat, publicité, etc.)
 
+Le code barre par sa simplicité constitue une très bonne preuve d'achat à coût bas. Il permet de désigner un produit facilement et ne nécessecite que très peu de ressources.
 
 
 -  Financier (Coûts pour le déploiement de la technologie, possibilités de recyclage, etc.)
