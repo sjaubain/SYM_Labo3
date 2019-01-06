@@ -26,10 +26,7 @@ import java.util.Arrays;
 
 
 /**
- * Activity for reading data from an NDEF Tag.
- *
- * @author Ralf Wondratschek
- *
+ * source : https://code.tutsplus.com/tutorials/reading-nfc-tags-with-android--mobile-17278
  */
 public class NfcActivity extends Activity {
 
