@@ -34,30 +34,15 @@ public class IBeaconActivity  extends Activity implements BeaconConsumer {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barcode);
-        this.beaconArrList = new ArrayList<String>();
-        this.listView = (ListView) findViewById(R.id.listView);
-        this.arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, this.beaconArrList);
-        this.listView.setAdapter(arrayAdapter);
-        this.beaconManager = BeaconManager.getInstanceForApplication(this);
-        this.beaconManager.getBeaconParsers().add(new BeaconParser(). setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24"));
-        this.beaconManager.bind(this);
+        beaconArrList = new ArrayList<String>();
+        listView = (ListView) findViewById(R.id.listView);
 
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, this.beaconArrList);
+        listView.setAdapter(arrayAdapter);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("This app needs location access");
-                builder.setMessage("Please grant location access so this app can detect beacons");
-                builder.setPositiveButton(android.R.string.ok, null);
-                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-                    }
-                });
-                builder.show();
-            }
-        }
+        beaconManager = BeaconManager.getInstanceForApplication(this);
+        beaconManager.getBeaconParsers().add(new BeaconParser(). setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24"));
+        beaconManager.bind(this);
     }
 
     @Override
@@ -78,8 +63,13 @@ public class IBeaconActivity  extends Activity implements BeaconConsumer {
             public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
                 if (beacons.size() > 0) {
                     beaconArrList.clear();
-                    for(Iterator<Beacon> iterator = beacons.iterator(); iterator.hasNext();) {
-                        beaconArrList.add(iterator.next().getId1().toString());
+                    for(Beacon beacon: beacons) {
+                        beaconArrList.add("UUID: "+ beacon.getId1()
+                                +"\nMAJOR: "+ beacon.getId2()
+                                +"\nMINOR: "+ beacon.getId3()
+                                +"\nRSSI: "+ beacon.getRssi()
+                                +"\nTX: "+  beacon.getTxPower()
+                                +"\nDISTANCE: "+ beacon.getDistance());
                     }
                     runOnUiThread(new Runnable() {
                         @Override
