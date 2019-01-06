@@ -42,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        NfcActivityButton = findViewById(R.id.nfcButton);
+        NfcActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nfcActivity(v);
+            }
+        });
+
         /* TODO */
         /* All other buttons */
     }
@@ -49,5 +57,10 @@ public class MainActivity extends AppCompatActivity {
     public void barcodeActivity(View v) {
         Intent intentBarcode = new Intent(this, BarcodeActivity.class);
         startActivity(intentBarcode);
+    }
+
+    public void nfcActivity(View v) {
+        Intent intentNfc = new Intent(this, NfcActivity.class);
+        startActivity(intentNfc);
     }
 }
