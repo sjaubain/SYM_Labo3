@@ -1,5 +1,5 @@
 package ch.heigvd.iict.sym.a3dcompassapp;
-
+/*
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -21,6 +21,7 @@ import org.altbeacon.beacon.Region;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+
 
 public class IBeaconActivity  extends Activity implements BeaconConsumer {
 
@@ -87,4 +88,4 @@ public class IBeaconActivity  extends Activity implements BeaconConsumer {
         }
     }
 }
-
+*/
