@@ -44,9 +44,17 @@ public class MainActivity extends AppCompatActivity {
 
         NfcActivityButton = findViewById(R.id.nfcButton);
         NfcActivityButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 nfcActivity(v);
+             }
+         });
+
+        CaptorActivityButton = findViewById(R.id.captorButton);
+        CaptorActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nfcActivity(v);
+                captorActivity(v);
             }
         });
 
@@ -62,5 +70,10 @@ public class MainActivity extends AppCompatActivity {
     public void nfcActivity(View v) {
         Intent intentNfc = new Intent(this, NfcActivity.class);
         startActivity(intentNfc);
+    }
+
+    public void captorActivity(View v){
+        Intent intentCompass = new Intent(this, CompassActivity.class);
+        startActivity(intentCompass);
     }
 }
